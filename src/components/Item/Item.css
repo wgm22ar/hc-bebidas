@@ -1,0 +1,16 @@
+.ContainerCards {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.Card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: 5px solid black;
+  margin: 5px;
+  padding: 10px;
+}
