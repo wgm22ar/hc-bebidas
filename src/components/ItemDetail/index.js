@@ -15,11 +15,7 @@ const ItemDetail = ({
         <h2 className="ItemHeader">{nombre}</h2>
       </header>
       <picture>
-        <img
-          src={`../../asyncMock/imgs/${img}`}
-          alt={nombre}
-          className="ItemImg"
-        />
+        <img src={img} alt={nombre} className="ItemImg" />
       </picture>
       <section>
         <p className="InfoCard">Descripcion: {descripcion}</p>
