@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import "./Item.css";
 const Item = ({ nombre, id, img, precio, stock }) => {
   return (
-    <div className="ContainerCard">
+    <div className="Contenedor">
       <article className="Card">
         <header className="Header">
           <h2 className="ItemHeader">{nombre}</h2>
