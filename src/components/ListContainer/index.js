@@ -5,15 +5,15 @@ import ItemList from "../ItemList/index";
 import { useParams } from "react-router-dom";
 
 const ItemListContainer = ({ greeting }) => {
-  const [products, setProducts] = useState([]);
+  const [products, setProduct] = useState([]);
 
   const { categoriaId } = useParams();
 
   useEffect(() => {
-    asyncFunc = categoriaId ? getProductsByCategoria : getProducts;
+    const asyncFunc = categoriaId ? getProductsByCategoria : getProducts;
     asyncFunc(categoriaId)
       .then((response) => {
-        setProducts(response);
+        setProduct(response);
       })
       .catch((error) => {
         console.error(error);
