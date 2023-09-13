@@ -1,0 +1,13 @@
+.conteinerCart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: solid;
+}
+
+.ImgCart {
+  height: 50px;
+  width: 50px;
+  margin: 5px;
+}

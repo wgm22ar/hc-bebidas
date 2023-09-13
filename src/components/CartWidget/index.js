@@ -1,8 +1,9 @@
 import IconCart from "./asset/IconCart.png";
+import "./cart.css";
 const CartWidget = () => {
   return (
-    <div className="d-flex flex-row">
-      <img src={IconCart} alt="Imagen del Carrito" />0
+    <div className="conteinerCart">
+      <img src={IconCart} alt="Imagen del Carrito" className="ImgCart" /> 0
     </div>
   );
 };

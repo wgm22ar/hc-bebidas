@@ -1,0 +1,12 @@
+.Padre {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 5px;
+  margin: 5px;
+}
+.Boton {
+  margin: 5px;
+  padding: 5px;
+}
