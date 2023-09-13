@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import ItemListContainer from "./components/ItemListContainer/index";
-import ItemDetailConteiner from "./components/ItemDetailContainer";
+import ItemDetailContainer from "./components/ItemDetailContainer";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
@@ -16,7 +16,7 @@ function App() {
             path="/categoria/:categoriaId"
             element={<ItemListContainer />}
           />
-          <Route path="/item/:itemId" element={<ItemDetailConteiner />} />
+          <Route path="/item/:itemId" element={<ItemDetailContainer />} />
           <Route
             path="*"
             element={<h1>La Pagina no se encuentra disponible</h1>}
