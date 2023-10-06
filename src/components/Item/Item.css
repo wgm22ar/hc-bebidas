@@ -1,9 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 .Card {
   border: 5px solid black;
   margin: 5px;
   padding: 10px;
-  height: 80vh;
-  width: 80vh;
+  height: auto;
+  width: auto;
   background-color: aquamarine;
 }
 

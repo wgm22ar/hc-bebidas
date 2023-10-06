@@ -26,7 +26,7 @@ const NavBar = () => {
             Cervezas
           </NavLink>
         </div>
-        <div className="d-flex flex-row align-items-center justify-content-around btn btn-danger m-2 categorias color=black">
+        <div className="d-flex flex-row align-items-center justify-content-around btn btn-danger m-2 categorias">
           <NavLink
             to={`/categorias/gaseosas`}
             className={({ isActive }) => (isActive ? "ActiveOption" : "Option")}
