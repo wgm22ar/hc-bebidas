@@ -16,7 +16,7 @@ const Item = ({ nombre, id, img, precio, stock }) => {
           <p className="InfoCard">Stock Disponible: {stock}</p>
         </section>
         <footer className="CardFooter">
-          <Link to={`/item/${id}`} className="Option">
+          <Link to={`/item/${id}`} className="btn btn-dark">
             Ver Mas{" "}
           </Link>
         </footer>

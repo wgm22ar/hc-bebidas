@@ -41,12 +41,12 @@ const ItemDetail = ({
       {/* </section> */}
       {/* <footer className="CardFooter"> */}
       {cantidadAgregada ? (
-        <ItemCount inicial={1} stock={stock} adicion={adicion} />
-      ) : (
         <Link to="/cart" className="btn btn-primary">
           {" "}
           Ir al Carrito
         </Link>
+      ) : (
+        <ItemCount inicial={1} stock={stock} adicion={adicion} />
       )}
       {/* </footer> */}
     </article>

@@ -11,3 +11,8 @@
   height: 350px;
   width: 350px;
 }
+.InfoCard {
+  text-size-adjust: auto;
+  background-color: rgb(164, 207, 248);
+  margin: 5px;
+}
