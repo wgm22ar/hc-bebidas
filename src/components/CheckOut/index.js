@@ -7,7 +7,8 @@ const CheckOut = () => {
   const [user, setUser] = useState({});
   const [validarEmail, setValidarEmail] = useState("");
   const [orderId, setOrderId] = useState("");
-  const { cart, addItem, deleteItem, clearCart } = useContext(CartContext);
+  const { cart, addItem, deleteItem, clearCart, total } =
+    useContext(CartContext);
 
   const datosCompra = (e) => {
     setUser({
@@ -22,11 +23,11 @@ const CheckOut = () => {
       let order = {
         user,
         item: cart,
-        total: addItem,
-        date: serverTimestamp,
+        // total: total(),
+        // date: serverTimestamp,
       };
       const finalizarOrden = collection(db, "ordenes");
-      addDoc(finalizarCompra, order)
+      addDoc(finalizarOrden, order)
         .then((res) => {
           setOrderId(res.id);
           clearCart();
@@ -52,10 +53,11 @@ const CheckOut = () => {
         <div>
           <h2>Terminar Compra</h2>
           <h4>Por Favor completar sus datos</h4>
+          <br></br>
           <form onSubmit={finalizarCompra}>
             <div className="mb-3">
               <label className="form-label">Nombre Completo</label>
-              <imput
+              <input
                 className="form-control"
                 onChange={datosCompra}
                 type="text"
@@ -65,7 +67,7 @@ const CheckOut = () => {
             </div>
             <div className="mb-3">
               <label className="form-label">Telefono</label>
-              <imput
+              <input
                 className="form-control"
                 onChange={datosCompra}
                 type="number"
@@ -75,7 +77,7 @@ const CheckOut = () => {
             </div>
             <div className="mb-3">
               <label className="form-label">E-mail</label>
-              <imput
+              <input
                 className="form-control"
                 onChange={datosCompra}
                 type="email"
@@ -85,7 +87,7 @@ const CheckOut = () => {
             </div>
             <div className="mb-3">
               <label className="form-label">Repetir su E-mail</label>
-              <imput
+              <input
                 className="form-control"
                 type="email"
                 placeholder="1323456@mail.com"
