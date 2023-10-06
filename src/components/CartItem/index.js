@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../Context/CartContext";
 
-const CartItem = (item) => {
+const CartItem = ({ item }) => {
   const { deleteItem } = useContext(CartContext);
   return (
     <div className="d-flex justify-content-around aling-items-center">

@@ -7,7 +7,7 @@ import { collection, doc, getDoc } from "firebase/firestore";
 import { db } from "../../servicios/firebase";
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState(null);
+  const [product, setProduct] = useState({});
 
   const { itemId } = useParams();
 
@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
   }, []);
   return (
     <div className="ItemDetailContainer">
-      <ItemDetail {...product} />
+      <ItemDetail product={product} />
     </div>
   );
 };
