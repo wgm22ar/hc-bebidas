@@ -1,55 +1,35 @@
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/index";
 import React, { useContext, useState } from "react";
-import { CartContext } from "../CartContext";
+import { CartContext } from "../../Context/CartContext";
 import Cart from "../Cart";
+import { productos } from "../../asyncMock/asyncMock";
+import Item from "../Item";
 
-const ItemDetail = ({
-  id,
-  nombre,
-  img,
-  categoria,
-  precio,
-  descripcion,
-  stock,
-}) => {
-  const [cantidadAgregada, setCantidadAgregada] = useState(false);
+const ItemDetail = ({ productos }) => {
+  const [cantidadAgregada, setCantidadAgregada] = useState("");
   const { addItem } = useContext(CartContext);
   const adicion = (cantidad) => {
-    setCantidadAgregada(true);
-    const item = {
-      id,
-      nombre,
-      precio,
-    };
-    addItem(item, cantidad);
-    console.log(`Compraste ${cantidad} de ${nombre}`);
+    setCantidadAgregada(cantidad);
+    addItem(Item, cantidad);
   };
   return (
-    <article className="Card">
-      {/* <header className="Header"> */}
-      <h2 className="ItemHeader">{nombre}</h2>
-      {/* </header> */}
-      {/* <picture> */}
-      <img src={img} alt={nombre} className="ItemImg" />
-      {/* </picture> */}
-      {/* <section> */}
-      <p className="InfoCard">Descripcion: {descripcion}</p>
-      <p className="InfoCard">Categoria: {categoria}</p>
-      <p className="InfoCard">Precio: ${precio}</p>
-      <p className="InfoCard">SKU: {id}</p>
-      {/* </section> */}
-      {/* <footer className="CardFooter"> */}
+    <div className="d-flex flex-column aling-item-center">
+      <h2>{productos.nombre}</h2>
+      <img src={productos.img} alt={productos.nombre} />
+      <p>Descripcion: {productos.descripcion}</p>
+      <p>Categoria: {productos.categoria}</p>
+      <p>Precio: ${productos.precio}</p>
+      <p>SKU: {productos.id}</p>
       {cantidadAgregada ? (
         <Link to="/cart" className="btn btn-primary">
           {" "}
           Ir al Carrito
         </Link>
       ) : (
-        <ItemCount inicial={1} stock={stock} adicion={adicion} />
+        <ItemCount inicial={1} stock={productos.stock} adicion={adicion} />
       )}
-      {/* </footer> */}
-    </article>
+    </div>
   );
 };
 

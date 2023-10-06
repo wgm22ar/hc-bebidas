@@ -9,7 +9,7 @@ import React, { useEffect } from "react";
 import { getProducts, productos } from "./asyncMock/asyncMock";
 import { addDoc, collection } from "firebase/firestore";
 import { db } from "./servicios/firebase";
-import { CartProvider } from "./components/CartContext";
+import { CartProvider } from "./Context/CartContext";
 import Cart from "./components/Cart/index";
 import CheckOut from "./components/CheckOut";
 function App() {
@@ -22,8 +22,8 @@ function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <CartProvider>
+      <CartProvider>
+        <BrowserRouter>
           <NavBar />
           <Routes>
             <Route path="/" element={<ItemListContainer />} />
@@ -39,8 +39,8 @@ function App() {
               element={<h1>La Pagina no se encuentra disponible</h1>}
             />
           </Routes>
-        </CartProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }

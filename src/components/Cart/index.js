@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { CartContext } from "../CartContext";
+import { CartContext } from "../../Context/CartContext";
 import Item from "../Item/index";
 import ItemCount from "../ItemCount";
 import { Link } from "react-router-dom";
 
 const Cart = () => {
-  const { cart, clearCart, cantidadTotal, total } = useContext(CartContext);
+  const { cart, clear, total } = useContext(CartContext);
   return (
     <div>
       {cart.length ? (
@@ -15,10 +15,10 @@ const Cart = () => {
           ))}
           <p> Total a Pagar: ${total()}</p>
           <div>
-            <button onClick={() => clearCart()} className="btn btn-primary">
+            <button onClick={() => clear()} className="btn btn-primary">
               Limpiar Carrito
             </button>
-            <Link to="/checkout" className="btn btn-success">
+            <Link to="/checkout" className="btn btn-secondary">
               Finalizar Compra
             </Link>
           </div>

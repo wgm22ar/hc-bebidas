@@ -1,16 +1,18 @@
 import { useContext } from "react";
 import IconCart from "./asset/IconCart.png";
-// import "./cart.css";
-import { CartContext } from "../CartContext";
+import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 
 const CartWidget = () => {
-  const { cantidadTotal } = useContext(CartContext);
+  const { cantidadEnCarrito } = useContext(CartContext);
+
   return (
-    <Link to="/cart" className="conteinerCart">
-      <img src={IconCart} alt="Imagen del Carrito" className="ImgCart" />{" "}
-      {cantidadTotal}
-    </Link>
+    <div className="d-flex justify-content-around aling-items-center">
+      <Link to="/cart">
+        <img src={IconCart} alt="Imagen del Carrito" className="ImgCart" />
+        {cantidadEnCarrito}
+      </Link>
+    </div>
   );
 };
 export default CartWidget;

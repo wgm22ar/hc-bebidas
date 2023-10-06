@@ -1,7 +1,7 @@
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import React, { useState, useContext } from "react";
 import { db } from "../../servicios/firebase";
-import { CartContext } from "../CartContext";
+import { CartContext } from "../../Context/CartContext";
 
 const CheckOut = () => {
   const [user, setUser] = useState({});
