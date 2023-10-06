@@ -14,11 +14,11 @@ const Cart = () => {
             <CartItem key={item.id} item={item} />
           ))}
           <p> Total a Pagar: ${total()}</p>
-          <div>
-            <button onClick={() => clear()} className="btn btn-primary">
+          <div className="m-2 p-1">
+            <button onClick={() => clear()} className="btn btn-primary m-2 p-1">
               Limpiar Carrito
             </button>
-            <Link to="/checkout" className="btn btn-secondary">
+            <Link to="/checkout" className="btn btn-secondary m-2 p-1">
               Finalizar Compra
             </Link>
           </div>

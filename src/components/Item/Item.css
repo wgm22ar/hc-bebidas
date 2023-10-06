@@ -15,6 +15,9 @@
 .ItemImg {
   height: 350px;
   width: 350px;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
 }
 .InfoCard {
   text-size-adjust: auto;
