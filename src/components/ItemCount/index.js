@@ -17,7 +17,7 @@ const ItemCount = ({ inicial, stock, adicion }) => {
   };
 
   return (
-    <div className="Padre">
+    <div className="Padre d-flex flex-column aling-items-center justify-content-between">
       <div className="Controles d-flex flex-row">
         <button className="btn btn-primary Boton" onClick={resta}>
           -
@@ -29,12 +29,12 @@ const ItemCount = ({ inicial, stock, adicion }) => {
       </div>
       <div>
         <button
-          className="btn btn-outline-primary"
+          className="btn btn-outline-primary mt-2"
           onClick={() => adicion(cantidad)}
-          disable={!stock}
+          disable={cantidad === 0}
         >
           {" "}
-          Agregar al Carrito
+          Comprar
         </button>
       </div>
     </div>
