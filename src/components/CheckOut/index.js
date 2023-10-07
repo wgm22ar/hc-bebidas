@@ -7,8 +7,7 @@ const CheckOut = () => {
   const [user, setUser] = useState({});
   const [validarEmail, setValidarEmail] = useState("");
   const [orderId, setOrderId] = useState("");
-  const { cart, addItem, deleteItem, clearCart, total } =
-    useContext(CartContext);
+  const { cart, addItem, deleteItem, clear, total } = useContext(CartContext);
 
   const datosCompra = (e) => {
     setUser({
@@ -30,7 +29,7 @@ const CheckOut = () => {
       addDoc(finalizarOrden, order)
         .then((res) => {
           setOrderId(res.id);
-          clearCart();
+          clear();
         })
         .catch((error) => console.log(error));
     } else {

@@ -7,10 +7,13 @@ const CartWidget = () => {
   const { cantidadEnCarrito } = useContext(CartContext);
 
   return (
-    <div className="d-flex justify-content-around aling-items-center">
-      <Link to="/cart">
+    <div>
+      <Link
+        to="/cart"
+        className="d-flex flex-row justify-content-around aling-items-center m-1 p-1"
+      >
         <img src={IconCart} alt="Imagen del Carrito" className="ImgCart" />
-        {cantidadEnCarrito}
+        <p>{cantidadEnCarrito()}</p>
       </Link>
     </div>
   );
